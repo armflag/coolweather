@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import android.util.Log;
+
 public class HttpUtil {
 	public static void sendHttpRequest(final String address,
 			final HttpCallbackListener listener) {
@@ -29,10 +31,12 @@ public class HttpUtil {
 							if (listener != null) {
 								// 回调onFinish()方法
 								listener.onFinish(response.toString());
+								Log.i("response", response.toString());
 							}
 						} catch (Exception e) {
 							if (listener != null) {
 								// 回调onError()方法
+							    e.printStackTrace();
 								listener.onError(e);
 							}
 						} finally {
