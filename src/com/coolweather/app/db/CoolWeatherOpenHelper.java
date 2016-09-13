@@ -17,18 +17,18 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper{
 	/**
 	 * City表创建语句
 	 */
-	public static final String CREATE_CITY = "create table City("
-			+ "id integer primary key autoincrement,"
-			+ "city_name text,"
-			+ "city_code text,"
+	public static final String CREATE_CITY = "create table City ("
+			+ "id integer primary key autoincrement, "
+			+ "city_name text, "
+			+ "city_code text, "
 			+ "province_id integer)";
 	/**
 	 * County表创建语句
 	 */
-	public static final String CREATE_COUNTY = "create table County("
-			+ "id integer primary key autoincrement"
-			+ "county_name text"
-			+ "county_code text"
+	public static final String CREATE_COUNTY = "create table County ("
+			+ "id integer primary key autoincrement, "
+			+ "county_name text, "
+			+ "county_code text, "
 			+ "city_id integer)";
 	public CoolWeatherOpenHelper(Context context, String name,
 			CursorFactory factory, int version) {
