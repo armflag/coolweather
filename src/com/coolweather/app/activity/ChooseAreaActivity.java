@@ -61,14 +61,16 @@ public class ChooseAreaActivity extends Activity {
 	* 当前选中的级别
 	*/
 	private int currentLevel;
+	private boolean isFromWeatherActivity;
 	private List<String> dataList = new ArrayList<String>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		isFromWeatherActivity = getIntent().getBooleanExtra("from_weather_activity", false);
 		SharedPreferences prefs = PreferenceManager.
 				getDefaultSharedPreferences(this);
-				if (prefs.getBoolean("city_selected", false)) {
+				if (prefs.getBoolean("city_selected", false) && !isFromWeatherActivity) {
 					Intent intent = new Intent(this, WeatherActivity.class);
 					startActivity(intent);
 					finish();
